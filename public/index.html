@@ -171,6 +171,160 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-panpan" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>我见过沧海的云，巫峡的雨<br>我见过一月的雪覆于白山，又渐变于葱茏<br>我在峨眉的林里云兴霞蔚<br>一径之后，雾水成露，沾于衣襟<br>我听过柔橹漂浮，声声入水，又归于沉寂<br>我看到春风八里十里，衣袖带花<br>无论何时忆起，它们实在是人生可喜<br>但都不如我此刻遇到的你</p>
+</blockquote>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/28/panpan/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-视觉SLAM十四讲笔记（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        <center><p>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">视觉SLAM十四讲笔记（二）——三维刚体运动</a>
+    </h1>
+  
+</p></center>
+        
+        <a href="/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2021-03-09T14:07:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-09</time>
+</a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">147字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">1分</span>
+      </span>
+    </span>
+</div>
+
+          
+        <!-- 添加完成 -->
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="旋转向量"><a href="#旋转向量" class="headerlink" title="旋转向量"></a>旋转向量</h2><p>三维空间内的坐标都可以用$R^{3}$表示。假设在线性空间内，我们找到了该空间的一组基($e_1$,<br>$e_2$, $e_3$),那么任意向量a在该基下有一坐标：<br>$$<br>a =<br>\begin{bmatrix}<br>e_1, &amp; e_2, &amp; e_3<br>\end{bmatrix}<br>\begin{bmatrix}<br>a_1 \\<br>a_2 \\<br>a_3<br>\end{bmatrix}=a_1e_1+a_2e_2+a_3e_3.<br>$$</p>
+<blockquote>
+<p>反对称矩阵<br>$a \times b$ = $a$ ^ $b$<br>$a$^ 为反对称矩阵（Skew-symmetric Matrix）。<br>该反对称符号一一映射。<br>$$<br>a^{} =<br>\begin{bmatrix}<br> 0 &amp; -a_3 &amp; a_2\\<br> a_3 &amp; 0 &amp; -a_1\\<br> -a_2 &amp; a_1 &amp; 0<br>\end{bmatrix}<br>$$</p>
+</blockquote>
+<h2 id="旋转向量和欧拉角"><a href="#旋转向量和欧拉角" class="headerlink" title="旋转向量和欧拉角"></a>旋转向量和欧拉角</h2><h2 id="四元数"><a href="#四元数" class="headerlink" title="四元数"></a>四元数</h2><h2 id="相似、仿射、射影变换"><a href="#相似、仿射、射影变换" class="headerlink" title="相似、仿射、射影变换"></a>相似、仿射、射影变换</h2>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">VSLAM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-视觉SLAM十四讲笔记（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -178,7 +332,7 @@
         <center><p>
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">视觉SLAM十四讲笔记（一）</a>
+      <a class="article-title" href="/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">视觉SLAM十四讲笔记（一）——概述</a>
     </h1>
   
 </p></center>
@@ -217,15 +371,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="经典视觉SLAM框架"><a href="#经典视觉SLAM框架" class="headerlink" title="经典视觉SLAM框架"></a>经典视觉SLAM框架</h2><p><strong>传感器数据读取</strong><br>  相机图像信息的读取和预处理。<br><strong>前端视觉里程计(Visual Odometry, VO)</strong><br>  估算相邻图像间相机的运动，以及局部地图的样子。<br><strong>后端非线性优化(Optimization)</strong><br>  接受不同时刻视觉里程计测量的相机位姿，以及回环检测的信息，对其优化得到全局一致的轨迹和地图。<br><strong>回环检测(Loop Closure Detection)</strong><br>  判断是否到达过之前的位置。<br><strong>建图(Mapping)</strong></p>
-<h2 id="SLAM问题的数学表述"><a href="#SLAM问题的数学表述" class="headerlink" title="SLAM问题的数学表述"></a>SLAM问题的数学表述</h2><h3 id="运动方程"><a href="#运动方程" class="headerlink" title="运动方程"></a>运动方程</h3><p>$$<br>x_k = f(x_{k-1}, u_k, w_k)<br>$$</p>
-<blockquote>
-<p>$x_{k-1}$ 为前一时刻坐标<br>  $u_k$ 为运动传感器读数或输入<br>  $w_k$ 为加入的噪声</p>
-</blockquote>
-<h3 id="观测方程"><a href="#观测方程" class="headerlink" title="观测方程"></a>观测方程</h3><p>$$<br>z_{k, j} = h(y_j, x_k, v_{k, j})<br>$$</p>
-<blockquote>
-<p>$z_{k, j}$ 为观测数据<br>  $y_j$ 为在位置上看到的路标点<br>  $x_k$ 为当前坐标<br>  $v_{k, j}$ 为观测噪声</p>
-</blockquote>
-
+        
       
 
       
@@ -478,11 +624,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">VSLAM</a>
+                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
+                <a href="javascript:void(0)" class="js-tag color1">VSLAM</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ranewouters.github.io">
-  <title>视觉SLAM十四讲笔记（一）——概述 | RaneWouters</title>
+  <title>RaneWouters</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -25,18 +25,23 @@
     }
   </style>
 
-  <meta name="description" content="经典视觉SLAM框架传感器数据读取  相机图像信息的读取和预处理。前端视觉里程计(Visual Odometry, VO)  估算相邻图像间相机的运动，以及局部地图的样子。后端非线性优化(Optimization)  接受不同时刻视觉里程计测量的相机位姿，以及回环检测的信息，对其优化得到全局一致的轨迹和地图。回环检测(Loop Closure Detection)  判断是否到达过之前的位置。建图">
+  <meta name="description" content="我见过沧海的云，巫峡的雨我见过一月的雪覆于白山，又渐变于葱茏我在峨眉的林里云兴霞蔚一径之后，雾水成露，沾于衣襟我听过柔橹漂浮，声声入水，又归于沉寂我看到春风八里十里，衣袖带花无论何时忆起，它们实在是人生可喜但都不如我此刻遇到的你">
 <meta property="og:type" content="article">
-<meta property="og:title" content="视觉SLAM十四讲笔记（一）——概述">
-<meta property="og:url" content="https://ranewouters.github.io/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
+<meta property="og:title" content="RaneWouters">
+<meta property="og:url" content="https://ranewouters.github.io/2021/03/28/panpan/index.html">
 <meta property="og:site_name" content="RaneWouters">
-<meta property="og:description" content="经典视觉SLAM框架传感器数据读取  相机图像信息的读取和预处理。前端视觉里程计(Visual Odometry, VO)  估算相邻图像间相机的运动，以及局部地图的样子。后端非线性优化(Optimization)  接受不同时刻视觉里程计测量的相机位姿，以及回环检测的信息，对其优化得到全局一致的轨迹和地图。回环检测(Loop Closure Detection)  判断是否到达过之前的位置。建图">
+<meta property="og:description" content="我见过沧海的云，巫峡的雨我见过一月的雪覆于白山，又渐变于葱茏我在峨眉的林里云兴霞蔚一径之后，雾水成露，沾于衣襟我听过柔橹漂浮，声声入水，又归于沉寂我看到春风八里十里，衣袖带花无论何时忆起，它们实在是人生可喜但都不如我此刻遇到的你">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-09T12:24:02.000Z">
-<meta property="article:modified_time" content="2021-03-28T04:12:35.378Z">
+<meta property="og:image" content="https://i.loli.net/2021/03/28/unTfrowGhC397HY.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/03/28/XzBL48wmTnEqxlU.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/03/28/4kCvAtecypNSXOf.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/03/28/Gh9JzFwZbjamyci.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/03/28/MhS3e9pwTYiDQAI.jpg">
+<meta property="article:published_time" content="2021-03-28T02:04:50.000Z">
+<meta property="article:modified_time" content="2021-03-28T08:12:59.390Z">
 <meta property="article:author" content="RaneWouters">
-<meta property="article:tag" content="VSLAM">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/03/28/unTfrowGhC397HY.jpg">
   
   
     <link rel="icon" href="https://i.loli.net/2021/03/05/LABzy4TEwnVr3oC.jpg">
@@ -172,63 +177,25 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-视觉SLAM十四讲笔记（一）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-panpan" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        <center><p>
-  
-    <h1 class="article-title" itemprop="name">
-      视觉SLAM十四讲笔记（一）——概述
-    </h1>
-  
-</p></center>
-        
-        <a href="/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2021-03-09T12:24:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-09</time>
-</a>
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">226字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-
-          
-        <!-- 添加完成 -->
-
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="经典视觉SLAM框架"><a href="#经典视觉SLAM框架" class="headerlink" title="经典视觉SLAM框架"></a>经典视觉SLAM框架</h2><p><strong>传感器数据读取</strong><br>  相机图像信息的读取和预处理。<br><strong>前端视觉里程计(Visual Odometry, VO)</strong><br>  估算相邻图像间相机的运动，以及局部地图的样子。<br><strong>后端非线性优化(Optimization)</strong><br>  接受不同时刻视觉里程计测量的相机位姿，以及回环检测的信息，对其优化得到全局一致的轨迹和地图。<br><strong>回环检测(Loop Closure Detection)</strong><br>  判断是否到达过之前的位置。<br><strong>建图(Mapping)</strong></p>
+        <blockquote>
+<p>我见过沧海的云，巫峡的雨<br>我见过一月的雪覆于白山，又渐变于葱茏<br>我在峨眉的林里云兴霞蔚<br>一径之后，雾水成露，沾于衣襟<br>我听过柔橹漂浮，声声入水，又归于沉寂<br>我看到春风八里十里，衣袖带花<br>无论何时忆起，它们实在是人生可喜<br>但都不如我此刻遇到的你</p>
+</blockquote>
 <span id="more"></span>
 
-<h2 id="SLAM问题的数学表述"><a href="#SLAM问题的数学表述" class="headerlink" title="SLAM问题的数学表述"></a>SLAM问题的数学表述</h2><h3 id="运动方程"><a href="#运动方程" class="headerlink" title="运动方程"></a>运动方程</h3><p>$$<br>x_k = f(x_{k-1}, u_k, w_k)<br>$$</p>
-<blockquote>
-<p>$x_{k-1}$ 为前一时刻坐标<br>  $u_k$ 为运动传感器读数或输入<br>  $w_k$ 为加入的噪声</p>
-</blockquote>
-<h3 id="观测方程"><a href="#观测方程" class="headerlink" title="观测方程"></a>观测方程</h3><p>$$<br>z_{k, j} = h(y_j, x_k, v_{k, j})<br>$$</p>
-<blockquote>
-<p>$z_{k, j}$ 为观测数据<br>  $y_j$ 为在位置上看到的路标点<br>  $x_k$ 为当前坐标<br>  $v_{k, j}$ 为观测噪声</p>
-</blockquote>
+<p>诗虽然是抄来的，心却是真心的。<br>书中曾讲，一个人碰上喜欢的人的时候，体温会刚好上升0.2摄氏度。<br>可是到我身上，体温上没上升不知道，话是不知道怎么说了是真的。<br>有的时候我甚至不知道自己讲的是什么。<br>不过，当没话说的时候，我发现似乎并不尴尬，<br>我觉得这样可太舒服了，真好。</p>
+<center><a href="https://sm.ms/image/unTfrowGhC397HY" target="_blank"><img src="https://i.loli.net/2021/03/28/unTfrowGhC397HY.jpg" ></a></center>
+<center><a href="https://sm.ms/image/XzBL48wmTnEqxlU" target="_blank"><img src="https://i.loli.net/2021/03/28/XzBL48wmTnEqxlU.jpg" ></a></center>
+<center><a href="https://sm.ms/image/4kCvAtecypNSXOf" target="_blank"><img src="https://i.loli.net/2021/03/28/4kCvAtecypNSXOf.jpg" ></a></center>
+<center><a href="https://sm.ms/image/Gh9JzFwZbjamyci" target="_blank"><img src="https://i.loli.net/2021/03/28/Gh9JzFwZbjamyci.jpg" ></a></center>
+<center><a href="https://sm.ms/image/MhS3e9pwTYiDQAI" target="_blank"><img src="https://i.loli.net/2021/03/28/MhS3e9pwTYiDQAI.jpg" ></a></center>
 
+<p><br></br><br><br></br><br><strong>所以，请问</strong></p>
+<h3 id="你愿意做我女朋友嘛？"><a href="#你愿意做我女朋友嘛？" class="headerlink" title="你愿意做我女朋友嘛？"></a>你愿意做我女朋友嘛？</h3>
       
 
       
@@ -236,17 +203,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">VSLAM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -297,7 +253,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://ranewouters.github.io/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://ranewouters.github.io/2021/03/28/panpan/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -311,18 +267,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          视觉SLAM十四讲笔记（二）——三维刚体运动
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/03/08/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">视觉SLAM十四讲笔记（二）——三维刚体运动</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -349,7 +296,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E8%A7%86%E8%A7%89SLAM%E6%A1%86%E6%9E%B6"><span class="toc-number">1.</span> <span class="toc-text">经典视觉SLAM框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SLAM%E9%97%AE%E9%A2%98%E7%9A%84%E6%95%B0%E5%AD%A6%E8%A1%A8%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">SLAM问题的数学表述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E5%8A%A8%E6%96%B9%E7%A8%8B"><span class="toc-number">2.1.</span> <span class="toc-text">运动方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E6%B5%8B%E6%96%B9%E7%A8%8B"><span class="toc-number">2.2.</span> <span class="toc-text">观测方程</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%A0%E6%84%BF%E6%84%8F%E5%81%9A%E6%88%91%E5%A5%B3%E6%9C%8B%E5%8F%8B%E5%98%9B%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">你愿意做我女朋友嘛？</span></a></li></ol>
                     </div>
                 </span>
             </div>

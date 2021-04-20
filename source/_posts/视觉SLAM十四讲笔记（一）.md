@@ -1,5 +1,5 @@
 ---
-title: 视觉SLAM十四讲笔记（一）
+title: 视觉SLAM十四讲笔记（一）——概述
 date: 2021-03-09 20:24:02
 tags: VSLAM
 ---
@@ -15,6 +15,7 @@ tags: VSLAM
 **回环检测(Loop Closure Detection)**
   判断是否到达过之前的位置。
 **建图(Mapping)**
+<!-- more -->
 
 ## SLAM问题的数学表述
 

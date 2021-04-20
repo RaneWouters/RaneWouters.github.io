@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ranewouters.github.io">
-  <title>视觉SLAM十四讲笔记（一）——概述 | RaneWouters</title>
+  <title>Tag: 杂记 | RaneWouters</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -25,17 +25,14 @@
     }
   </style>
 
-  <meta name="description" content="经典视觉SLAM框架传感器数据读取  相机图像信息的读取和预处理。前端视觉里程计(Visual Odometry, VO)  估算相邻图像间相机的运动，以及局部地图的样子。后端非线性优化(Optimization)  接受不同时刻视觉里程计测量的相机位姿，以及回环检测的信息，对其优化得到全局一致的轨迹和地图。回环检测(Loop Closure Detection)  判断是否到达过之前的位置。建图">
-<meta property="og:type" content="article">
-<meta property="og:title" content="视觉SLAM十四讲笔记（一）——概述">
-<meta property="og:url" content="https://ranewouters.github.io/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
+  <meta name="description" content="中国地质大学在读">
+<meta property="og:type" content="website">
+<meta property="og:title" content="RaneWouters">
+<meta property="og:url" content="https://ranewouters.github.io/tags/%E6%9D%82%E8%AE%B0/index.html">
 <meta property="og:site_name" content="RaneWouters">
-<meta property="og:description" content="经典视觉SLAM框架传感器数据读取  相机图像信息的读取和预处理。前端视觉里程计(Visual Odometry, VO)  估算相邻图像间相机的运动，以及局部地图的样子。后端非线性优化(Optimization)  接受不同时刻视觉里程计测量的相机位姿，以及回环检测的信息，对其优化得到全局一致的轨迹和地图。回环检测(Loop Closure Detection)  判断是否到达过之前的位置。建图">
+<meta property="og:description" content="中国地质大学在读">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-09T12:24:02.000Z">
-<meta property="article:modified_time" content="2021-03-28T04:12:35.378Z">
 <meta property="article:author" content="RaneWouters">
-<meta property="article:tag" content="VSLAM">
 <meta name="twitter:card" content="summary">
   
   
@@ -172,204 +169,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-视觉SLAM十四讲笔记（一）" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        <center><p>
+            
   
-    <h1 class="article-title" itemprop="name">
-      视觉SLAM十四讲笔记（一）——概述
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/03/08/hello-world/" class="archive-article-date">
+  	<time datetime="2021-03-08T11:13:49.087Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-08</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/03/08/hello-world/">Hello World</a>
     </h1>
   
-</p></center>
-        
-        <a href="/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2021-03-09T12:24:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-09</time>
-</a>
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">226字</span>
-      </span>
-    </span>
 
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-
+        <div class="article-info info-on-right">
           
-        <!-- 添加完成 -->
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="经典视觉SLAM框架"><a href="#经典视觉SLAM框架" class="headerlink" title="经典视觉SLAM框架"></a>经典视觉SLAM框架</h2><p><strong>传感器数据读取</strong><br>  相机图像信息的读取和预处理。<br><strong>前端视觉里程计(Visual Odometry, VO)</strong><br>  估算相邻图像间相机的运动，以及局部地图的样子。<br><strong>后端非线性优化(Optimization)</strong><br>  接受不同时刻视觉里程计测量的相机位姿，以及回环检测的信息，对其优化得到全局一致的轨迹和地图。<br><strong>回环检测(Loop Closure Detection)</strong><br>  判断是否到达过之前的位置。<br><strong>建图(Mapping)</strong></p>
-<span id="more"></span>
-
-<h2 id="SLAM问题的数学表述"><a href="#SLAM问题的数学表述" class="headerlink" title="SLAM问题的数学表述"></a>SLAM问题的数学表述</h2><h3 id="运动方程"><a href="#运动方程" class="headerlink" title="运动方程"></a>运动方程</h3><p>$$<br>x_k = f(x_{k-1}, u_k, w_k)<br>$$</p>
-<blockquote>
-<p>$x_{k-1}$ 为前一时刻坐标<br>  $u_k$ 为运动传感器读数或输入<br>  $w_k$ 为加入的噪声</p>
-</blockquote>
-<h3 id="观测方程"><a href="#观测方程" class="headerlink" title="观测方程"></a>观测方程</h3><p>$$<br>z_{k, j} = h(y_j, x_k, v_{k, j})<br>$$</p>
-<blockquote>
-<p>$z_{k, j}$ 为观测数据<br>  $y_j$ 为在位置上看到的路标点<br>  $x_k$ 为当前坐标<br>  $v_{k, j}$ 为观测噪声</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">VSLAM</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂记</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://ranewouters.github.io/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          视觉SLAM十四讲笔记（二）——三维刚体运动
-        
-      </div>
-    </a>
   
   
-    <a href="/2021/03/08/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E8%A7%86%E8%A7%89SLAM%E6%A1%86%E6%9E%B6"><span class="toc-number">1.</span> <span class="toc-text">经典视觉SLAM框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SLAM%E9%97%AE%E9%A2%98%E7%9A%84%E6%95%B0%E5%AD%A6%E8%A1%A8%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">SLAM问题的数学表述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E5%8A%A8%E6%96%B9%E7%A8%8B"><span class="toc-number">2.1.</span> <span class="toc-text">运动方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E6%B5%8B%E6%96%B9%E7%A8%8B"><span class="toc-number">2.2.</span> <span class="toc-text">观测方程</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-
+    
 
 
           </div>
@@ -393,9 +246,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

@@ -6,7 +6,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ranewouters.github.io">
-  <title>视觉SLAM十四讲笔记（一）——概述 | RaneWouters</title>
+  <title>视觉SLAM十四讲笔记（二）——三维刚体运动 | RaneWouters</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -25,15 +25,15 @@
     }
   </style>
 
-  <meta name="description" content="经典视觉SLAM框架传感器数据读取  相机图像信息的读取和预处理。前端视觉里程计(Visual Odometry, VO)  估算相邻图像间相机的运动，以及局部地图的样子。后端非线性优化(Optimization)  接受不同时刻视觉里程计测量的相机位姿，以及回环检测的信息，对其优化得到全局一致的轨迹和地图。回环检测(Loop Closure Detection)  判断是否到达过之前的位置。建图">
+  <meta name="description" content="旋转向量三维空间内的坐标都可以用$R^{3}$表示。假设在线性空间内，我们找到了该空间的一组基($e_1$,$e_2$, $e_3$),那么任意向量a在该基下有一坐标：$$a &#x3D;\begin{bmatrix}e_1, &amp; e_2, &amp; e_3\end{bmatrix}\begin{bmatrix}a_1 \\a_2 \\a_3\end{bmatrix}&#x3D;a_1e_1+a_2e_2+">
 <meta property="og:type" content="article">
-<meta property="og:title" content="视觉SLAM十四讲笔记（一）——概述">
-<meta property="og:url" content="https://ranewouters.github.io/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
+<meta property="og:title" content="视觉SLAM十四讲笔记（二）——三维刚体运动">
+<meta property="og:url" content="https://ranewouters.github.io/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
 <meta property="og:site_name" content="RaneWouters">
-<meta property="og:description" content="经典视觉SLAM框架传感器数据读取  相机图像信息的读取和预处理。前端视觉里程计(Visual Odometry, VO)  估算相邻图像间相机的运动，以及局部地图的样子。后端非线性优化(Optimization)  接受不同时刻视觉里程计测量的相机位姿，以及回环检测的信息，对其优化得到全局一致的轨迹和地图。回环检测(Loop Closure Detection)  判断是否到达过之前的位置。建图">
+<meta property="og:description" content="旋转向量三维空间内的坐标都可以用$R^{3}$表示。假设在线性空间内，我们找到了该空间的一组基($e_1$,$e_2$, $e_3$),那么任意向量a在该基下有一坐标：$$a &#x3D;\begin{bmatrix}e_1, &amp; e_2, &amp; e_3\end{bmatrix}\begin{bmatrix}a_1 \\a_2 \\a_3\end{bmatrix}&#x3D;a_1e_1+a_2e_2+">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-09T12:24:02.000Z">
-<meta property="article:modified_time" content="2021-03-28T04:12:35.378Z">
+<meta property="article:published_time" content="2021-03-09T14:07:07.000Z">
+<meta property="article:modified_time" content="2021-04-06T01:29:23.232Z">
 <meta property="article:author" content="RaneWouters">
 <meta property="article:tag" content="VSLAM">
 <meta name="twitter:card" content="summary">
@@ -172,20 +172,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-视觉SLAM十四讲笔记（一）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-视觉SLAM十四讲笔记（二）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         <center><p>
   
     <h1 class="article-title" itemprop="name">
-      视觉SLAM十四讲笔记（一）——概述
+      视觉SLAM十四讲笔记（二）——三维刚体运动
     </h1>
   
 </p></center>
         
-        <a href="/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2021-03-09T12:24:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-09</time>
+        <a href="/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2021-03-09T14:07:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-09</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -195,7 +195,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">226字</span>
+        <span class="post-count">147字</span>
       </span>
     </span>
 
@@ -217,18 +217,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="经典视觉SLAM框架"><a href="#经典视觉SLAM框架" class="headerlink" title="经典视觉SLAM框架"></a>经典视觉SLAM框架</h2><p><strong>传感器数据读取</strong><br>  相机图像信息的读取和预处理。<br><strong>前端视觉里程计(Visual Odometry, VO)</strong><br>  估算相邻图像间相机的运动，以及局部地图的样子。<br><strong>后端非线性优化(Optimization)</strong><br>  接受不同时刻视觉里程计测量的相机位姿，以及回环检测的信息，对其优化得到全局一致的轨迹和地图。<br><strong>回环检测(Loop Closure Detection)</strong><br>  判断是否到达过之前的位置。<br><strong>建图(Mapping)</strong></p>
-<span id="more"></span>
-
-<h2 id="SLAM问题的数学表述"><a href="#SLAM问题的数学表述" class="headerlink" title="SLAM问题的数学表述"></a>SLAM问题的数学表述</h2><h3 id="运动方程"><a href="#运动方程" class="headerlink" title="运动方程"></a>运动方程</h3><p>$$<br>x_k = f(x_{k-1}, u_k, w_k)<br>$$</p>
+        <h2 id="旋转向量"><a href="#旋转向量" class="headerlink" title="旋转向量"></a>旋转向量</h2><p>三维空间内的坐标都可以用$R^{3}$表示。假设在线性空间内，我们找到了该空间的一组基($e_1$,<br>$e_2$, $e_3$),那么任意向量a在该基下有一坐标：<br>$$<br>a =<br>\begin{bmatrix}<br>e_1, &amp; e_2, &amp; e_3<br>\end{bmatrix}<br>\begin{bmatrix}<br>a_1 \\<br>a_2 \\<br>a_3<br>\end{bmatrix}=a_1e_1+a_2e_2+a_3e_3.<br>$$</p>
 <blockquote>
-<p>$x_{k-1}$ 为前一时刻坐标<br>  $u_k$ 为运动传感器读数或输入<br>  $w_k$ 为加入的噪声</p>
+<p>反对称矩阵<br>$a \times b$ = $a$ ^ $b$<br>$a$^ 为反对称矩阵（Skew-symmetric Matrix）。<br>该反对称符号一一映射。<br>$$<br>a^{} =<br>\begin{bmatrix}<br> 0 &amp; -a_3 &amp; a_2\\<br> a_3 &amp; 0 &amp; -a_1\\<br> -a_2 &amp; a_1 &amp; 0<br>\end{bmatrix}<br>$$</p>
 </blockquote>
-<h3 id="观测方程"><a href="#观测方程" class="headerlink" title="观测方程"></a>观测方程</h3><p>$$<br>z_{k, j} = h(y_j, x_k, v_{k, j})<br>$$</p>
-<blockquote>
-<p>$z_{k, j}$ 为观测数据<br>  $y_j$ 为在位置上看到的路标点<br>  $x_k$ 为当前坐标<br>  $v_{k, j}$ 为观测噪声</p>
-</blockquote>
-
+<h2 id="旋转向量和欧拉角"><a href="#旋转向量和欧拉角" class="headerlink" title="旋转向量和欧拉角"></a>旋转向量和欧拉角</h2><h2 id="四元数"><a href="#四元数" class="headerlink" title="四元数"></a>四元数</h2><h2 id="相似、仿射、射影变换"><a href="#相似、仿射、射影变换" class="headerlink" title="相似、仿射、射影变换"></a>相似、仿射、射影变换</h2>
       
 
       
@@ -297,7 +290,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://ranewouters.github.io/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://ranewouters.github.io/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -311,18 +304,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/03/28/panpan/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          视觉SLAM十四讲笔记（二）——三维刚体运动
+          (no title)
         
       </div>
     </a>
   
   
-    <a href="/2021/03/08/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2021/03/09/%E8%A7%86%E8%A7%89SLAM%E5%8D%81%E5%9B%9B%E8%AE%B2%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">视觉SLAM十四讲笔记（一）——概述</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -349,7 +342,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E8%A7%86%E8%A7%89SLAM%E6%A1%86%E6%9E%B6"><span class="toc-number">1.</span> <span class="toc-text">经典视觉SLAM框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SLAM%E9%97%AE%E9%A2%98%E7%9A%84%E6%95%B0%E5%AD%A6%E8%A1%A8%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">SLAM问题的数学表述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E5%8A%A8%E6%96%B9%E7%A8%8B"><span class="toc-number">2.1.</span> <span class="toc-text">运动方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E6%B5%8B%E6%96%B9%E7%A8%8B"><span class="toc-number">2.2.</span> <span class="toc-text">观测方程</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%8B%E8%BD%AC%E5%90%91%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text">旋转向量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%8B%E8%BD%AC%E5%90%91%E9%87%8F%E5%92%8C%E6%AC%A7%E6%8B%89%E8%A7%92"><span class="toc-number">2.</span> <span class="toc-text">旋转向量和欧拉角</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E5%85%83%E6%95%B0"><span class="toc-number">3.</span> <span class="toc-text">四元数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E4%BC%BC%E3%80%81%E4%BB%BF%E5%B0%84%E3%80%81%E5%B0%84%E5%BD%B1%E5%8F%98%E6%8D%A2"><span class="toc-number">4.</span> <span class="toc-text">相似、仿射、射影变换</span></a></li></ol>
                     </div>
                 </span>
             </div>
