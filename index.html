@@ -51,7 +51,7 @@
 		
 
         <nav>
-        总字数 <span class="post-count">662</span>
+        总字数 <span class="post-count">991</span>
         </nav>
 
 		<nav class="header-menu">
@@ -299,14 +299,24 @@
         
       </header>
       <div align="center" class="post-count">
-        字数：147字 | 阅读时长：1分钟
+        字数：476字 | 阅读时长：2分钟
       </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="旋转向量"><a href="#旋转向量" class="headerlink" title="旋转向量"></a>旋转向量</h2><p>三维空间内的坐标都可以用$R^{3}$表示。假设在线性空间内，我们找到了该空间的一组基($e_1$, $e_2$, $e_3$),那么任意向量a在该基下有一坐标：<br>$$<br>a =<br>\begin{bmatrix}<br>e_1, &amp; e_2, &amp; e_3<br>\end{bmatrix}<br>\begin{bmatrix}<br>a_1 \\<br>a_2 \\<br>a_3<br>\end{bmatrix}=a_1e_1+a_2e_2+a_3e_3.<br>$$</p>
+        <h2 id="旋转矩阵"><a href="#旋转矩阵" class="headerlink" title="旋转矩阵"></a>旋转矩阵</h2><p>三维空间内的坐标都可以用$R^{3}$表示。假设在线性空间内，我们找到了该空间的一组基($e_1$, $e_2$, $e_3$),那么任意向量a在该基下有一坐标：<br>$$<br>a =<br>\begin{bmatrix}<br>e_1, &amp; e_2, &amp; e_3<br>\end{bmatrix}<br>\begin{bmatrix}<br>a_1 \\<br>a_2 \\<br>a_3<br>\end{bmatrix}=a_1e_1+a_2e_2+a_3e_3.<br>$$</p>
 <blockquote>
 <p>反对称矩阵<br>$a \times b$ = $a$ ^ $b$<br>$a$^ 为反对称矩阵（Skew-symmetric Matrix）。<br>该反对称符号一一映射。<br>$$<br>a^{} =<br>\begin{bmatrix}<br> 0 &amp; -a_3 &amp; a_2\\<br> a_3 &amp; 0 &amp; -a_1\\<br> -a_2 &amp; a_1 &amp; 0<br>\end{bmatrix}<br>$$</p>
+</blockquote>
+<p>对于同一向量a在两坐标系下的坐标为 $[a_1, a_2, a_3]^{T}$ 和 $[a_1^{‘}, a_2^{‘}, a_3^{‘}]^{T}$ , 根据坐标定义有<br>$$<br>\begin{bmatrix}<br>e_1, &amp; e_2, &amp; e_3<br>\end{bmatrix}<br>\begin{bmatrix}<br>a_1 \\<br>a_2 \\<br>a_3<br>\end{bmatrix}=<br>\begin{bmatrix}<br>e_1^{‘}, &amp; e_2^{‘}, &amp; e_3^{‘}<br>\end{bmatrix}<br>\begin{bmatrix}<br>a_1^{‘} \\<br>a_2^{‘} \\<br>a_3^{‘}<br>\end{bmatrix}<br>$$</p>
+<p>同时左乘$ \begin{bmatrix} a_1 \\ a_2 \\ a_3 \end{bmatrix} $ 得到：<br>$$<br>\begin{bmatrix}<br>a_1 \\<br>a_2 \\<br>a_3<br>\end{bmatrix}=<br>\begin{bmatrix}<br>e_1^{T}e_1^{‘}, &amp; e_1^{T}e_2^{‘}, &amp; e_1^{T}e_3^{‘} \\<br>e_2^{T}e_1^{‘}, &amp; e_2^{T}e_2^{‘}, &amp; e_2^{T}e_3^{‘} \\<br>e_3^{T}e_1^{‘}, &amp; e_3^{T}e_2^{‘}, &amp; e_3^{T}e_3^{‘}<br>\end{bmatrix}<br>\begin{bmatrix}<br>a_1^{‘} \\<br>a_2^{‘} \\<br>a_3^{‘}<br>\end{bmatrix}=<br>\pmb{Ra^{‘}}<br>$$</p>
+<p>中间矩阵即为旋转矩阵(定义为$\pmb{R}$)，其描述了旋转本身。</p>
+<blockquote>
+<p>由于各个分量是两坐标系基的内积，且基向量长度为1，所以实际上是各基向量夹角的余弦值。所以该矩阵也叫方向余弦矩阵。<br>旋转矩阵是一个行列式为1的正交矩阵。反之，行列式为1的正交矩阵也是旋转矩阵。故可将n维旋转矩阵的集合定义为：<br>$$<br>SO(n) = {R \in R^{n \times n} | RR^{T} = I, det(R) = 1}<br>$$</p>
+</blockquote>
+<p>用一个旋转矩阵 $\pmb{R}$ 和一个平移向量 $\pmb{t}$ 完整描述了一个欧式空间的坐标变换。<br>$$<br>a_1 = R_{12}a_{2} + t^{12}<br>$$</p>
+<blockquote>
+<p>$R_{12}$ 表示把坐标系2的向量变换到坐标系1。</p>
 </blockquote>
 <h2 id="旋转向量和欧拉角"><a href="#旋转向量和欧拉角" class="headerlink" title="旋转向量和欧拉角"></a>旋转向量和欧拉角</h2><h2 id="四元数"><a href="#四元数" class="headerlink" title="四元数"></a>四元数</h2><h2 id="相似、仿射、射影变换"><a href="#相似、仿射、射影变换" class="headerlink" title="相似、仿射、射影变换"></a>相似、仿射、射影变换</h2>
       
